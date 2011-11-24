@@ -1,5 +1,5 @@
 Source: canaima-mod-burg
-Section: unknown
+Section: misc
 Priority: extra
 Maintainer: Equipo de Desarrollo de Canaima GNU/Linux <desarrolladores@canaima.softwarelibre.gob.ve>
 Uploaders: Randy Ortega <ortega571@gmail.com>
@@ -13,4 +13,5 @@ Package: canaima-mod-burg
 Architecture: all
 Depends: python-imaging, xterm, ${shlibs:Depends}, ${misc:Depends}
 Description: Manejador de temas del Burg.
+ Este paquete permite modificar los temas del Burg.
 
