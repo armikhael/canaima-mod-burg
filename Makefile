@@ -23,8 +23,8 @@ install:
 	cp imagenes/man-burg-icon.png $(DESTDIR)/usr/share/icons/canaima-iconos/apps/48/
 	cp desktop/canaima-mod-burg.desktop $(DESTDIR)/usr/share/applications/
 	cp scripts/canaima-mod-burg $(DESTDIR)/usr/bin/
-	cp scripts/canaima-mod-burg.py  $(DESTDIR)/usr/share/canaima-mod-burg
-	
+	cp scripts/canaima-mod-burg.py  $(DESTDIR)/usr/share/canaima-mod-burg/
+
 uninstall:
 
 	rm -rf $(DESTDIR)/usr/share/canaima-mod-burg/

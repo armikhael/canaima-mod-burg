@@ -3,15 +3,15 @@ Section: misc
 Priority: extra
 Maintainer: Equipo de Desarrollo de Canaima GNU/Linux <desarrolladores@canaima.softwarelibre.gob.ve>
 Uploaders: Randy Ortega <ortega571@gmail.com>
-Build-Depends: cdbs, debhelper (>= 7.0.50~)
+Build-Depends: debhelper (>= 7.0.50~)
 Standards-Version: 3.9.1
-#Homepage: http://canaima.softwarelibre.gob.ve/
-#Vcs-Git: git://gitorious.org/canaima-gnu-linux/canaima-mod-burg.git
-#Vcs-Browser: git://gitorious.org/canaima-gnu-linux/canaima-mod-burg.git
+Homepage: http://canaima.softwarelibre.gob.ve/
+Vcs-Git: git://gitorious.org/canaima-gnu-linux/canaima-mod-burg.git
+Vcs-Browser: http://gitorious.org/canaima-gnu-linux/canaima-mod-burg/trees/master
 
 Package: canaima-mod-burg
 Architecture: all
-Depends: python-imaging, xterm, ${shlibs:Depends}, ${misc:Depends}
+Depends: python-imaging, xterm, burg, burg-themes, ${shlibs:Depends}, ${misc:Depends}
 Description: Manejador de temas del Burg.
  Este paquete permite modificar los temas del Burg.
 
