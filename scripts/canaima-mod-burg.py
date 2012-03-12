@@ -9,9 +9,13 @@ import Image
 # -------------- Variable global ------------------------------
 text = next(os.walk("/boot/burg/themes"))[1]
 combobox=gtk.combo_box_new_text()
-for t in text:
-	combobox.append_text(t)
 
+for t in text:
+	if t == "icons" or t == "conf.d" or t == "burg" or t == "radiance":
+		print "No es tema"
+	else:	
+		combobox.append_text(t)
+     
 #---------------- Clase Principal -----------------------------
 class PyApp(gtk.Window):
 
@@ -23,6 +27,7 @@ class PyApp(gtk.Window):
         self.set_size_request(300, 200)
         self.set_resizable(0)
         self.set_position(gtk.WIN_POS_CENTER)
+        self.set_icon_from_file('/usr/share/icons/canaima-iconos/apps/48/man-burg-icon.png')
 
         self.fixed = gtk.Fixed()
 
@@ -34,7 +39,6 @@ class PyApp(gtk.Window):
 
 		# Defino la etiqueta del titulo        
         self.label = gtk.Label()
-        self.label.set_use_markup(gtk.TRUE)
         self.label.set_markup("<b>MODIFICADOR DE TEMAS DEL BURG</b>")
         self.fixed.put(self.label, 21, 60)
         
@@ -70,14 +74,12 @@ class PyApp(gtk.Window):
         self.add(self.fixed)
         self.show_all()
         
-    def ayudar(self, event):
-		print "mostrar"
-		md=gtk.MessageDialog(type=gtk.MESSAGE_WARNING, buttons=gtk.BUTTONS_OK, message_format="En caso de incluir otro tema debe hacerlo en /boot/burg/themes")
-		md.run()
-		md.destroy()
+    def ayudar(self, widget=None):
+        os.system('yelp /usr/share/gnome/help/canaima-mod-burg/es/canaima-mod-burg.xml')
         
     def modificar(self, event):
 		tema = combobox.get_active_text()
+		
 		if not tema: 
 			error=gtk.MessageDialog(type=gtk.MESSAGE_ERROR, buttons=gtk.BUTTONS_OK, message_format="Tiene que seleccionar un tema")
 			error.run()
@@ -87,7 +89,9 @@ class PyApp(gtk.Window):
 			os.system("sed -i 's/GRUB_THEME=.*/GRUB_THEME='"+tema+"'/g' burg")
 			os.system("update-burg")
 			os.system("xterm -e burg-emu")	
-			
-
+			fin=gtk.MessageDialog(type=gtk.MESSAGE_WARNING, buttons=gtk.BUTTONS_OK, message_format="Su tema ha sido modificado")
+			fin.run()
+			fin.destroy()
+			combobox.set_active(-1)
 PyApp()
 gtk.main()

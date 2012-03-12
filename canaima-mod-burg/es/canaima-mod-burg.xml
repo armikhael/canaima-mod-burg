@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN" "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+<!ENTITY app "Canaima-Mod-BURG">
+<!ENTITY applet "Canaima-Mod-Burg">
+<!ENTITY appversion "1.0.3">
+<!ENTITY date "Marzo de 2012">
+<!ENTITY legal SYSTEM "legal.xml">
+<!ENTITY manrevision "1.0.3">
+]>
+<!-- This file describes the Dictionary applet and application. -->
+<!-- 
+      (Do not remove this comment block.)
+  Maintained by the GNOME Documentation Project
+  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified 11 April, 2002
+  
+-->
+<!-- =============Document Header ============================= -->
+<article id="index" lang="es">
+<!-- please do not change the id; for translations, change language to -->
+<!-- appropriate code -->
+  <articleinfo> 
+    <title>Manual del Canaima-Mod-Burg</title>
+
+    <abstract role="description">
+      <para>EL diccionario le permite buscar definiciones y escrituras correctas de palabras.</para>
+    </abstract>
+    
+    <copyright>
+      <year>2012</year>
+      <holder>Randy Ortega</holder>
+    </copyright><copyright><year>2012.</year><holder>Equipo de desarrollo de Canaima GNU/Linux</holder></copyright>
+    
+   
+    <publisher> 
+      <publishername>Proyecto de documentación de GNOME</publishername> 
+    </publisher> 
+
+     <legalnotice id="legalnotice">
+	<para>Se otorga permiso para copiar, distribuir y/o modificar este documento bajo los términos de la Licencia de Documentación Libre de GNU, Versión 1.1 o cualquier otra versión posterior publicada por la Free Software Foundation; sin Secciones Invariantes ni Textos de Cubierta Delantera ni Textos de Cubierta Trasera. Puede encontrar una copia de la licencia GFDL en este <ulink type="help" url="ghelp:fdl">enlace</ulink> o en el archivo COPYING-DOCS distribuido con este manual.</para>
+         <para>Este manual es parte de una colección de manuales de GNOME distribuido bajo la GFDL. Si quiere distribuir este manual por separado de la colección, puede hacerlo añadiendo una copia de la licencia al manual, tal como se describe en la sección 6 de la licencia.</para>
+
+	<para>Muchos de los nombres usados por compañías para distinguir sus productos y servicios son mencionados como marcas comerciales. Donde esos nombres aparezcan en cualquier documentación de GNOME, y los miembros del Proyecto de Documentación de GNOME están al corriente de esas marcas comerciales, entonces los nombres se pondrán en mayúsculas o con la inicial en mayúsculas.</para>
+
+	<para>ESTE DOCUMENTO Y LAS VERSIONES MODIFICADAS DEL MISMO SE PROPORCIONAN SEGÚN LAS CONDICIONES ESTABLECIDAS EN LA LICENCIA DE DOCUMENTACIÓN LIBRE DE GNU (GFDL) Y TENIENDO EN CUENTA QUE: <orderedlist>
+		<listitem>
+		  <para>EL DOCUMENTO SE PROPORCIONA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO, NI EXPLÍCITA NI IMPLÍCITA INCLUYENDO, SIN LIMITACIÓN, GARANTÍA DE QUE EL DOCUMENTO O VERSIÓN MODIFICADA DE ÉSTE CAREZCA DE DEFECTOS COMERCIALES, SEA ADECUADO A UN FIN CONCRETO O INCUMPLA ALGUNA NORMATIVA. TODO EL RIESGO RELATIVO A LA CALIDAD, PRECISIÓN Y UTILIDAD DEL DOCUMENTO O SU VERSIÓN MODIFICADA RECAE EN USTED. SI CUALQUIER DOCUMENTO O VERSIÓN MODIFICADA DE AQUÉL RESULTARA DEFECTUOSO EN CUALQUIER ASPECTO, USTED (Y NO EL REDACTOR INICIAL, AUTOR O CONTRIBUYENTE) ASUMIRÁ LOS COSTES DE TODA REPARACIÓN, MANTENIMIENTO O CORRECCIÓN NECESARIOS. ESTA RENUNCIA DE GARANTÍA ES UNA PARTE ESENCIAL DE ESTA LICENCIA. NO SE AUTORIZA EL USO DE NINGÚN DOCUMENTO NI VERSIÓN MODIFICADA DE ÉSTE POR EL PRESENTE, SALVO DENTRO DEL CUMPLIMIENTO DE LA RENUNCIA;Y</para>
+		</listitem>
+		<listitem>
+		  <para>BAJO NINGUNA CIRCUNSTANCIA NI BAJO NINGUNA TEORÍA LEGAL, SEA POR ERROR (INCLUYENDO NEGLIGENCIA), CONTRATO O DE ALGÚN OTRO MODO, EL AUTOR, EL ESCRITOR INICIAL, CUALQUIER CONTRIBUIDOR, O CUALQUIER DISTRIBUIDOR DEL DOCUMENTO O VERSIÓN MODIFICADA DEL DOCUMENTO, O CUALQUIER PROVEEDOR DE CUALQUIERA DE ESAS PARTES, SERÁ RESPONSABLE ANTE NINGUNA PERSONA POR NINGÚN DAÑO DIRECTO, INDIRECTO, ESPECIAL, INCIDENTAL O DERIVADO DE NINGÚN TIPO, INCLUYENDO, SIN LIMITACIÓN DAÑOS POR PÉRDIDA DE MERCANCÍAS, PARO TÉCNICO, FALLO INFORMÁTICO O MAL FUNCIONAMIENTO O CUALQUIER OTRO POSIBLE DAÑO O PÉRDIDAS DERIVADAS O RELACIONADAS CON EL USO DEL DOCUMENTO O SUS VERSIONES MODIFICADAS, AUNQUE DICHA PARTE HAYA SIDO INFORMADA DE LA POSIBILIDAD DE QUE SE PRODUJESEN DICHOS DAÑOS.</para>
+		</listitem>
+	  </orderedlist></para>
+  </legalnotice>
+
+
+
+    <authorgroup> 
+      <author role="maintainer"> 
+	<firstname>Randy</firstname> 
+	<surname>Ortega</surname> 
+	<affiliation> 
+	  <address><email>ortega571@gmail.com</email></address> 
+	</affiliation> 
+      </author> 
+
+    </authorgroup>
+
+<!--
+    <revhistory>
+      <revision> 
+	<revnumber>Manual del Canaima-Mod-Burg V1.0.3</revnumber> 
+	<date>Marzo de 2012</date> 
+	<revdescription> 
+	  <para role="author">Randy Ortega</para>
+	  <para role="publisher">Proyecto de documentación de GNOME</para>
+	</revdescription> 
+      </revision>
+    </revhistory> 
+-->
+    <releaseinfo>Este manual describe la versión 1.0.3 del Canaima-Mod-Burg.</releaseinfo> 
+    <legalnotice> 
+      <title>Comentarios</title> 
+      <para>Para informar sobre un fallo o hacer sugerencias sobre la aplicación Canaima-Mod-Burg, hagalo en la siguiente web <ulink url="http://proyectos.canaima.softwarelibre.gob.ve/canaima/wiki/ReportarIncidencias" type="help">Reportar incidencias en la distribucion Canaima/GNU Linux</ulink>.</para>
+      
+<!-- Translators may also add here feedback address for translations -->
+    </legalnotice> 
+  </articleinfo> 
+
+  <indexterm> 
+    <primary>Canaima-Mod-Burg</primary> 
+  </indexterm> 
+
+<!-- ============= Document Body ============================= -->
+<!-- ============= Introducción ============================== -->
+  <sect1 id="Canaima-Mod_Burg-introduction"> 
+    <title>Introducción</title>
+
+    <para>La aplicación <application>Canaima-Mod-Burg</application> le permite modificar los temas del burg, disponibles en la distribución Canaima/GNU Linux, a través de una simple interfaz gráfica.</para>
+    
+  </sect1>
+
+<!-- ============= Iniciando =========================== -->  
+  <sect1 id="Canaima-Mod-Burg-started">
+    <title>Iniciando</title>
+    
+<!-- ============= Para iniciar Canaima-Mod-Burg ======================= -->
+    <sect2 id="Canaima-Mod-Burg-iniciar-application">
+      <title>Para iniciar el Canaima-Mod-Burg</title>
+      
+      <para>Puede iniciar el <application>Canaima-Mod-Burg</application> de las siguientes formas:</para>
+      
+      <variablelist>
+        	<varlistentry>
+        	  <term>Menú</term>
+        	  <listitem>
+        	    <para>Elija <menuchoice><guisubmenu>Herramientas del sistema</guisubmenu><guimenuitem>Gestor de Arranque del Sistema</guimenuitem></menuchoice>.</para>
+        	  </listitem>
+        	</varlistentry>
+    	<varlistentry>
+    	  <term>Línea de órdenes (terminal de root)</term>
+    	  <listitem>
+    	    <para>Ejecute el siguiente comando: <command>canaima-mod-burg</command></para>
+    	  </listitem>
+    	</varlistentry>
+      </variablelist>
+      
+      <para>Una vez iniciado el <application>Canaima-Mod-Burg</application>, se mostrará la siguiente ventana:</para>
+      
+      <figure id="gnome-dictionary-fig">
+        <title>Ventana de inicio Canaima-Mod-Burg</title>
+        <screenshot> 
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="figures/canaima-mod-burg-bienvenida.png" format="PNG"/>
+            </imageobject>
+            <textobject><phrase>Muestra la ventana principal del Canaima-Mod-Burg.</phrase></textobject> 
+          </mediaobject>
+        </screenshot>
+      </figure>
+
+    </sect2>
+
+  </sect1>
+  
+<!-- ============= Uso ===================================== -->
+  <sect1 id="Canaima-Mod-Burg-usage">
+    <title>Uso</title>
+    
+    <sect2 id="Canaima-Mod-Burg-lookup">
+      <title>Cambiar tema</title>
+      
+      <para>Para modificar un tema, teclée sobre la ventana desplegable  <guilabel>TEMA</guilabel> y seleccione alguno de la lista.</para>
+    
+      <para>Tal cual lo indican las imagenes a continuación:</para>
+
+      <figure id="Canaima-Mod-Burg-lookup-fig1">
+        <title>Lista de temas disponibles</title>
+        <screenshot> 
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="figures/canaima-mod-burg-temas.png" format="PNG"/>
+            </imageobject>
+            <textobject><phrase>Muestra los temas disponibles.</phrase></textobject> 
+          </mediaobject>
+        </screenshot>
+      </figure>
+      
+      <para>En este caso se selecciona el tema fortune, como lo indica la figura 3, y se presiona el botón Guardar.</para>
+      <figure id="Canaima-Mod-Burg-lookup-fig2">
+        <title>Tema seleccionado </title>
+        <screenshot> 
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="figures/canaima-mod-burg-seleccion.png" format="PNG"/>
+            </imageobject>
+            <textobject><phrase>Tema seleccionado de la lista.</phrase></textobject> 
+          </mediaobject>
+        </screenshot>
+      </figure>	
+
+     <para>Luego de haber presionado el botón Guardar, mustra el tema seleccionado, tal como lo indica la figura 4.</para>
+      <figure id="Canaima-Mod-Burg-lookup-fig3">
+        <title>Visualización del tema seleccionado </title>
+        <screenshot> 
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="figures/canaima-mod-burg-visualizacion.png" format="PNG"/>
+            </imageobject>
+            <textobject><phrase> Visualización del tema seleccionado de la lista.</phrase></textobject> 
+          </mediaobject>
+        </screenshot>
+      </figure>
+
+     <para>Finalmente luego de haber cargado, cierra la ventana del tema y se muestra un mensaje indicando que el tema se ha modificado , tal como lo indica la figura 6.</para>
+      <figure id="Canaima-Mod-Burg-lookup-fig4">
+        <title>Mensaje de confirmación </title>
+        <screenshot> 
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="figures/canaima-mod-burg-confirmacion.png" format="PNG"/>
+            </imageobject>
+            <textobject><phrase> Confirmación del tema modificado.</phrase></textobject> 
+          </mediaobject>
+        </screenshot>
+      </figure>
+<para>Acepta el mensaje y listo ya tiene un nuevo tema en el burg.</para>
+	
+
+    
+    </sect2>
+      
+  </sect1>
+
+<!-- ============= Preferencias =============================== -->
+  <sect1 id="gnome-dictionary-preferences">
+    <title>Preferencias</title>
+    
+    <warning><para>Para añadir nuevos temas al burg debe hacerlo copiando, a traves de la terminal de root, la carpeta del tema en la ruta <application>/boot/burg/themes/</application></para></warning>
+  </sect1>
+
+</article>
