@@ -1,3 +1,9 @@
+canaima-mod-burg (1.0-3) unstable; urgency=low
+
+  * [1d0d67d] se modificó el script .py y se añadio un manual en xml
+
+ -- Randy Ortega <ortega571@gmail.com>  Mon, 12 Mar 2012 08:44:15 -0430
+
 canaima-mod-burg (1.0-2) unstable; urgency=low
 
   * [cad51a3] Agregando dependencia a burg
