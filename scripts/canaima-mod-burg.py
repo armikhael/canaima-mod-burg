@@ -42,7 +42,7 @@ class CanaimaBurgModificar:
         self.window.set_size_request(550, 540)
         self.window.connect("delete_event", self.delete_event)
         self.window.connect("destroy", self.destroy)
-        self.window.set_icon_from_file('/usr/share/pixmaps/canaima-burg-icon.png')
+        #self.window.set_icon_from_file('/usr/share/pixmaps/canaima-burg-icon.png')
         
         #Contenedor - - - - -
         self.fixed = gtk.Fixed()
