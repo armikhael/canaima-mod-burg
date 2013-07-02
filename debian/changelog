@@ -1,3 +1,13 @@
+canaima-mod-burg (1.0-4) unstable; urgency=low
+
+  * [963b6ca] gregando Nuevas rutas y funciones para imagenes al makefile Modicando Ayuda al nuevo tema de la aplicación borrando imagenes de ayuda Borrando dependencia en el control agregando al rules función override_dh_auto_build Cambiando nombre a la aplicación y ruta en el desktop Agregando nuevas img Modificando scripts principal para mejor el uso y su previsualizacion Agregando webkit para emular un burg en la aplicación
+  * [dfc1e74] Agrando nuevo Uploaders
+  * [5b30958] Agregando al Makefile Ruta de img
+  * [a38802c] Corrigiendo sintaxis en el Makefile
+  * [ec9185d] Nueva version de los Temas del burg
+
+ -- Carlos Espinoza <carlosarmikhael@gmail.com>  Tue, 02 Jul 2013 15:54:25 -0430
+
 canaima-mod-burg (1.0-3) unstable; urgency=low
 
   * [1d0d67d] se modificó el script .py y se añadio un manual en xml
