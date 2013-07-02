@@ -1,3 +1,9 @@
+canaima-mod-burg (1.0-10) unstable; urgency=low
+
+  * [a76067a] corrigiendo enlace simbolico
+
+ -- Carlos Espinoza <carlosarmikhael@gmail.com>  Tue, 02 Jul 2013 16:06:48 -0430
+
 canaima-mod-burg (1.0-9) unstable; urgency=low
 
   * [7a494cd] corrigiendo enlace simbolico
