@@ -52,10 +52,8 @@ install:
 	ln -s /usr/share/canaima-notas-gnome/scripts/canaima-mod-burg.py $(DESTDIR)/usr/bin/canaima-notas-gnome
 
 uninstall:
-
 	rm -rf $(DESTDIR)/usr/share/canaima-mod-burg/
-
-	rm -rf $(DESTDIR)/usr/share/icons/canaima-iconos/apps/48/man-burg-icon.png
+	rm -rf $(DESTDIR)/usr/share/pixmaps/canaima-burg-icon.png
 	rm -rf $(DESTDIR)/usr/share/applications/canaima-mod-burg.desktop
 	rm -rf $(DESTDIR)/usr/share/gnome/help/canaima-mod-burg/
 	
