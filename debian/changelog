@@ -1,3 +1,9 @@
+canaima-mod-burg (1.0-12) unstable; urgency=low
+
+  * [d946408] corrigiendo enlace simbolico y nombre xD
+
+ -- Carlos Espinoza <carlosarmikhael@gmail.com>  Tue, 02 Jul 2013 16:22:19 -0430
+
 canaima-mod-burg (1.0-11) unstable; urgency=low
 
   * [2c28e0a] corrigiendo enlace simbolico y nombre xD
