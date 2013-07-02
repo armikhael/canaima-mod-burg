@@ -1,3 +1,9 @@
+canaima-mod-burg (1.0-5) unstable; urgency=low
+
+  * [d5f51c1] Nueva version de los Temas del burg
+
+ -- Carlos Espinoza <carlosarmikhael@gmail.com>  Tue, 02 Jul 2013 15:55:12 -0430
+
 canaima-mod-burg (1.0-4) unstable; urgency=low
 
   * [963b6ca] gregando Nuevas rutas y funciones para imagenes al makefile Modicando Ayuda al nuevo tema de la aplicación borrando imagenes de ayuda Borrando dependencia en el control agregando al rules función override_dh_auto_build Cambiando nombre a la aplicación y ruta en el desktop Agregando nuevas img Modificando scripts principal para mejor el uso y su previsualizacion Agregando webkit para emular un burg en la aplicación
