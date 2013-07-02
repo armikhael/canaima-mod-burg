@@ -39,12 +39,13 @@ clean-pyc:
 
 install:
 	mkdir -p $(DESTDIR)/usr/share/canaima-mod-burg/
+	mkdir -p $(DESTDIR)/usr/share/canaima-mod-burg/img/
 	mkdir -p $(DESTDIR)/usr/share/applications/
 	mkdir -p $(DESTDIR)/usr/bin/
 	mkdir -p $(DESTDIR)/usr/share/pixmaps/
 	mkdir -p $(DESTDIR)/usr/share/gnome/help/
 	
-	cp -r img/monitor.png $(DESTDIR)/usr/share/canaima-mod-burg/
+	cp -r img/monitor.png $(DESTDIR)/usr/share/canaima-mod-burg/img/
 	cp -r img/canaima-burg-icon.png $(DESTIR)/usr/share/pixmaps/	
 	cp -r desktop/canaima-mod-burg.desktop $(DESTDIR)/usr/share/applications/
 	cp -r scripts  $(DESTDIR)/usr/share/canaima-mod-burg/
