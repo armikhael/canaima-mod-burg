@@ -2,8 +2,7 @@ Source: canaima-mod-burg
 Section: misc
 Priority: extra
 Maintainer: Equipo de Desarrollo de Canaima GNU/Linux <desarrolladores@canaima.softwarelibre.gob.ve>
-Uploaders: Randy Ortega <ortega571@gmail.com>
-Maintainer: Carlos Espinoza <carlosarmikhael@gmail.com>
+Uploaders: Carlos Espinoza <carlosarmikhael@gmail.com>
 Build-Depends: debhelper (>= 7.0.50~)
 Standards-Version: 3.9.1
 Homepage: http://canaima.softwarelibre.gob.ve/
