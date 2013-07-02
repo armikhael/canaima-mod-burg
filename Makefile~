@@ -50,7 +50,7 @@ install:
 	cp -r desktop/canaima-mod-burg.desktop $(DESTDIR)/usr/share/applications/
 	cp -r scripts  $(DESTDIR)/usr/share/canaima-mod-burg/
 	cp -r ayuda/canaima-mod-burg $(DESTDIR)/usr/share/gnome/help/
-	ln -s /usr/share/canaima-notas-gnome/scripts/canaima-mod-burg.py $(DESTDIR)/usr/bin/canaima-mod-burg
+	ln -s /usr/share/canaima-notas-gnome/scripts/canaima-mod-burg.py $(DESTDIR)/usr/bin/canaima-notas-gnome
 
 uninstall:
 	rm -rf $(DESTDIR)/usr/share/canaima-mod-burg/
