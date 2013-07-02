@@ -1,3 +1,9 @@
+canaima-mod-burg (1.0-9) unstable; urgency=low
+
+  * [7a494cd] corrigiendo enlace simbolico
+
+ -- Carlos Espinoza <carlosarmikhael@gmail.com>  Tue, 02 Jul 2013 16:06:43 -0430
+
 canaima-mod-burg (1.0-8) unstable; urgency=low
 
   * [d21497a] Nueva version de los Temas del burg
