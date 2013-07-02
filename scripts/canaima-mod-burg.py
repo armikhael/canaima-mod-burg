@@ -1,97 +1,197 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
+#@author:  Randy Ortega <ortega571@gmail.com>
+#@Maintainer: Carlos Espinoza <carlosarmikhael@gmail.com>
 
-#Modificador de temas Burg-Canaima
 import pygtk
+pygtk.require('2.0')
 import gtk
 import os
 import Image
+import sys
+from subprocess import Popen, PIPE, STDOUT
+import webkit
+import gobject
 
-# -------------- Variable global ------------------------------
-text = next(os.walk("/boot/burg/themes"))[1]
-combobox=gtk.combo_box_new_text()
+#Funcion de barra Progresiva
+def barra_progresiva(pbobj):
+	new_val = pbobj.barra_progreso.get_fraction() + 0.01
+	if new_val > 1.0:
+		new_val = 0.0
+	pbobj.barra_progreso.set_fraction(new_val)
+	return True
 
-for t in text:
-	if t == "icons" or t == "conf.d" or t == "burg" or t == "radiance":
-		print "No es tema"
-	else:	
-		combobox.append_text(t)
-     
-#---------------- Clase Principal -----------------------------
-class PyApp(gtk.Window):
-
+##--------------Clase Principal de la aplicación Canaima_mod_burg----------------------##
+class CanaimaBurgModificar:
+	
+	#Rutas - - - - -
+    WORKDIR = sys.path[0]
+    MONITOR_IMG ='../img/monitor.png'
+    RUTA_BUG = '/boot/burg/themes/'
+    RUTA_TMP = '/tmp/pre_view.png'
+    AYUDA_RUTA_SISTEMA = '/usr/share/gnome/help/canaima-mod-burg/es/canaima-mod-burg.xml'
+    
     def __init__(self):
-        super(PyApp, self).__init__()
-  
-        # Defino la ventana
-        self.set_title("Modificador de temas del BURG")
-        self.set_size_request(300, 200)
-        self.set_resizable(0)
-        self.set_position(gtk.WIN_POS_CENTER)
-        self.set_icon_from_file('/usr/share/icons/canaima-iconos/apps/48/man-burg-icon.png')
-
+        
+        #Vetana - - - - -
+        self.window = gtk.Window(gtk.WINDOW_TOPLEVEL)
+        self.window.set_resizable(False)
+        self.window.set_title("Temas del Burg")
+        self.window.set_position(gtk.WIN_POS_CENTER)
+        self.window.set_border_width(0)
+        self.window.set_size_request(550, 540)
+        self.window.connect("delete_event", self.delete_event)
+        self.window.connect("destroy", self.destroy)
+        self.window.set_icon_from_file('/usr/share/pixmaps/canaima-burg-icon.png')
+        
+        #Contenedor - - - - -
         self.fixed = gtk.Fixed()
-
-		# Defino el banner        
-        self.image = gtk.Image()
-        self.image.set_from_file('/usr/share/images/banner.png')
-        self.fixed.put(self.image, 0, 0)
-        self.image.show()
-
-		# Defino la etiqueta del titulo        
-        self.label = gtk.Label()
-        self.label.set_markup("<b>MODIFICADOR DE TEMAS DEL BURG</b>")
-        self.fixed.put(self.label, 21, 60)
         
-        # Defino la linea separadora
-        self.linea = gtk.HSeparator() 
-        self.linea.set_size_request(300, 1)
-        self.fixed.put(self.linea, 0, 85)
-        self.linea.show()
-
-		# Defino la etiqueta de tema
-        self.label = gtk.Label("TEMA:")
-        self.fixed.put(self.label, 60, 110)
-        
-              
-        self.button = gtk.Button("Guardar")
-        self.fixed.put(self.button, 35,150)
-        self.button.connect("clicked",self.modificar)
-        
-        self.button = gtk.Button("Ayuda")
-        self.fixed.put(self.button, 123,150)
-        self.button.connect("clicked",self.ayudar)
-        
-        # Defino el boton
-        self.button = gtk.Button("Cancelar")
-        self.button.connect("clicked",gtk.main_quit)
-        self.fixed.put(self.button, 200,150)
-        
+        #Etiqueta Descripción - - - - -
+        self.label_description = gtk.Label()
+        self.label_description.set_markup(
+        "Modifica los temas existentes del burg.")
+        self.fixed.put(self.label_description, 130,10)
+        self.label_description.show()
 		
-        self.fixed.put(combobox, 100,105)
+		#Etiqueta tema - - - - -
+        self.label_tema_selec= gtk.Label()
+        self.label_tema_selec.set_markup(
+        "Seleccione el Thema : ")
+        self.fixed.put(self.label_tema_selec, 110, 50)
+        self.label_tema_selec.show()
         
-
-        self.connect("destroy", gtk.main_quit)
-        self.add(self.fixed)
-        self.show_all()
+        #Pestaña desplegable - - - - -
+        ruta_burg = next(os.walk(self.RUTA_BUG))[1]
+        ruta_burg.sort(key=lambda x: x.upper())
+        self.combox_themas = gtk.combo_box_new_text()
+        self.combox_themas.set_size_request(180, 35)
+        for datos_ruta in ruta_burg:
+			if datos_ruta == "icons" or datos_ruta == "conf.d" or datos_ruta == "burg" or datos_ruta == "radiance":
+				False
+			else:
+				self.combox_themas.append_text(datos_ruta)        
+        self.fixed.put(self.combox_themas, 280, 40)
+        self.combox_themas.show()
+        self.combox_themas.connect('changed', self.emulando_thema_burg)
         
-    def ayudar(self, widget=None):
-        os.system('yelp /usr/share/gnome/help/canaima-mod-burg/es/canaima-mod-burg.xml')
+        #Imagen Monitor - - - - -
+        self.image_pc = gtk.Image()
+        self.image_pc.set_from_file(self.MONITOR_IMG)
+        self.fixed.put(self.image_pc, 54, 90)
+        self.image_pc.show()
         
-    def modificar(self, event):
-		tema = combobox.get_active_text()
+        #Boton Aplicar - - - - -
+        self.button_aplicar = gtk.Button(stock=gtk.STOCK_APPLY)
+        self.button_aplicar.set_size_request(80, 30)
+        self.button_aplicar.connect("clicked",self.aplicar_thema_burg)
+        self.fixed.put(self.button_aplicar, 460,500)
+        self.button_aplicar.show()
+        
+        #~ #Boton Atras - - - - -
+        #~ self.button_atras = gtk.Button(stock=gtk.STOCK_GO_BACK)
+        #~ self.button_atras.set_size_request(80, 30)
+        #~ self.button_atras.connect("clicked",self.atras_inicio)
+        #~ self.fixed.put(self.button_atras, 370,500)
+        #~ self.button_atras.show()
+        
+        #Boton Ayuda - - - - -
+        self.button_ayuda = gtk.Button(stock=gtk.STOCK_HELP)
+        self.button_ayuda.set_size_request(70, 30)
+        self.button_ayuda.connect("clicked",self.ayuda_thema_burg)
+        self.fixed.put(self.button_ayuda, 110,500)
+        self.button_ayuda.show()
+        
+        #Boton Cerrar - - - - -
+        self.button_cerrar = gtk.Button(stock=gtk.STOCK_QUIT)
+        self.button_cerrar.set_size_request(80, 30)
+        self.button_cerrar.connect("clicked",self.destroy)
+        self.fixed.put(self.button_cerrar, 15,500)
+        self.button_cerrar.show()
+        
+        #WebKit - - - -
+        self.view = webkit.WebView()
+        
+        self.window.add(self.fixed)
+        self.window.show_all()
+        self.window.show()
+	
+	#Funcion que emula el tema del burg
+    def emulando_thema_burg(self, combox_themas):
+        if combox_themas.get_active_text():
+            ruta_img_theme = self.RUTA_BUG + combox_themas.get_active_text() + '/background.png'
+            imagen_thema = Image.open(ruta_img_theme)
+            ancho = 417
+            altura = 270
+            def_img = imagen_thema.resize((ancho, altura), Image.ANTIALIAS)
+            def_img.save(self.RUTA_TMP)
+            
+            if os.path.exists(self.RUTA_TMP):         
+                self.view.open('file:///'+self.WORKDIR+'/html/index.html')
+                self.fixed.put(self.view,71, 111)
+                self.view.show()
+                self.view.reload()
+                self.barra_progreso = gtk.ProgressBar()
+                self.barra_progreso.set_size_request(250, 12)
+                self.fixed.put(self.barra_progreso, 155 , 325)
+                self.barra_progreso.show()
+                self.timer = gobject.timeout_add (1000, barra_progresiva, self)
+                
+            else:
+                # Tremendo lio Error
+                pass 
+ 
+    def delete_event(self, widget, event, data=None):
+        return False
+ 
+    def destroy(self, widget, data=None):
+        os.system('rm ' + self.RUTA_TMP)
+        gtk.main_quit()
+    
+    #Funcion de Aplicar Tema del Burg
+    def aplicar_thema_burg(self, widget):
+		self.nombre_thema = self.combox_themas.get_active_text()
 		
-		if not tema: 
-			error=gtk.MessageDialog(type=gtk.MESSAGE_ERROR, buttons=gtk.BUTTONS_OK, message_format="Tiene que seleccionar un tema")
-			error.run()
-			error.destroy()
+		#Funcion Barra de Progreso aleatoria
+		def barra_aleatoria(self):
+			self.barra_progreso.pulse()
+			return True
+		
+		if not self.nombre_thema:
+			error_mensaje=gtk.MessageDialog(type=gtk.MESSAGE_ERROR, buttons=gtk.BUTTONS_OK,
+			                                message_format="Tiene que seleccionar un tema.\t")
+			error_mensaje.set_title('ERROR')
+			error_mensaje.run()
+			error_mensaje.destroy()
+		
 		else:
+			timer_1 = gobject.timeout_add (100, barra_aleatoria,self)
 			os.chdir("/etc/default/")
-			os.system("sed -i 's/GRUB_THEME=.*/GRUB_THEME='"+tema+"'/g' burg")
-			os.system("update-burg")
-			os.system("xterm -e burg-emu")	
-			fin=gtk.MessageDialog(type=gtk.MESSAGE_WARNING, buttons=gtk.BUTTONS_OK, message_format="Su tema ha sido modificado")
-			fin.run()
-			fin.destroy()
-			combobox.set_active(-1)
-PyApp()
-gtk.main()
+			Popen(["sed -i 's/GRUB_THEME=.*/GRUB_THEME='"+self.nombre_thema+"'/g' burg"], shell=True, stdout=PIPE)
+			Popen(["update-burg"], shell=True, stdout=PIPE)
+			self.barra_progreso.set_text("Tema Cambiando ")
+			aceptar_mensaje=gtk.MessageDialog(parent=None, flags=0, buttons=gtk.BUTTONS_OK, 
+											  message_format='Su tema del Burg ha sido modificado por "'+ 
+											  self.nombre_thema + '".\t')
+			aceptar_mensaje.set_title('')
+			aceptar_mensaje.run()
+			aceptar_mensaje.destroy()
+			self.combox_themas.set_active(-1)
+			timer_2 = gobject.source_remove(timer_1)
+			self.barra_progreso.set_text(" ")
+	
+	#Funcion del Manual de ayuda 
+    def ayuda_thema_burg(self, widget):
+		x= Popen(['yelp '+self.AYUDA_RUTA_SISTEMA], shell=True, stdout=PIPE)
+
+    #~ def atras_inicio(self, widget):
+		#~ canaima_mod_burg_inicio.CanaimaBurgInicio()
+		#~ self.window.hide()
+		
+def main():
+    gtk.main()
+    return 0
+ 
+if __name__ == "__main__":
+    CanaimaBurgModificar()
+    main()

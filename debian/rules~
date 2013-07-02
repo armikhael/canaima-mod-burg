@@ -26,8 +26,5 @@
 # el valor necesario para instalarse dentro de la carpeta debian, lugar
 # donde finalmente se hace el paquete.
 
-override_dh_auto_build:
-	$(MAKE) DESTDIR=$(CURDIR)/debian/canaima-mod-burg build
-
 override_dh_auto_install:
 	$(MAKE) DESTDIR=$(CURDIR)/debian/canaima-mod-burg install

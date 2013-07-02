@@ -1,13 +1,13 @@
 [Desktop Entry]
 Version=1.0
 Encoding=UTF-8
-Name=Gestor de Arranque del Sistema
-Icon=/usr/share/icons/canaima-iconos/apps/48/man-burg-icon.png
+Name=Temas del Burg
+Icon=canaima-burg-icon
 Comment=Canaima-Mod-Burg: Manejador de temas del BURG
 Exec=su-to-root -X -c /usr/bin/canaima-mod-burg
 Terminal=false
 Type=Application
 Categories=GNOME;GTK;System;
 StartupNotify=False
-Name[es_VE]=Gestor de Arranque del Sistema
-Icon[es_VE]=/usr/share/icons/canaima-iconos/apps/48/man-burg-icon.png
+Name[es_VE]=Temas del Burg
+Icon[es_VE]=canaima-burg-icon

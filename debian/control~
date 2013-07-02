@@ -12,7 +12,7 @@ Vcs-Browser: http://gitorious.org/canaima-gnu-linux/canaima-mod-burg/trees/maste
 
 Package: canaima-mod-burg
 Architecture: all
-Depends: python-imaging, burg, burg-themes, ${shlibs:Depends}, ${misc:Depends}
+Depends: python-imaging, xterm, burg, burg-themes, ${shlibs:Depends}, ${misc:Depends}
 Description: Manejador de temas del Burg.
  Este paquete permite modificar los temas del Burg.
 

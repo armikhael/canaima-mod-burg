@@ -1,7 +1,0 @@
-#!/bin/bash
-
-cd /usr/share/canaima-mod-burg/
-if [ -e /usr/share/canaima-mod-burg ]
-then
-	python canaima-mod-burg.py
-fi

@@ -29,7 +29,7 @@
     
     <copyright>
       <year>2012</year>
-      <holder>Randy Ortega</holder>
+      <holder>Carlos Espinoza</holder>
     </copyright><copyright><year>2012.</year><holder>Equipo de desarrollo de Canaima GNU/Linux</holder></copyright>
     
    
@@ -57,27 +57,14 @@
 
     <authorgroup> 
       <author role="maintainer"> 
-	<firstname>Randy</firstname> 
-	<surname>Ortega</surname> 
+	<firstname>Carlos</firstname> 
+	<surname>Espinoza</surname> 
 	<affiliation> 
-	  <address><email>ortega571@gmail.com</email></address> 
+	  <address><email>carlosarmikhael@gmail.com</email></address> 
 	</affiliation> 
       </author> 
-
     </authorgroup>
 
-<!--
-    <revhistory>
-      <revision> 
-	<revnumber>Manual del Canaima-Mod-Burg V1.0.3</revnumber> 
-	<date>Marzo de 2012</date> 
-	<revdescription> 
-	  <para role="author">Randy Ortega</para>
-	  <para role="publisher">Proyecto de documentación de GNOME</para>
-	</revdescription> 
-      </revision>
-    </revhistory> 
--->
     <releaseinfo>Este manual describe la versión 1.0.3 del Canaima-Mod-Burg.</releaseinfo> 
     <legalnotice> 
       <title>Comentarios</title> 
@@ -125,19 +112,7 @@
     	</varlistentry>
       </variablelist>
       
-      <para>Una vez iniciado el <application>Canaima-Mod-Burg</application>, se mostrará la siguiente ventana:</para>
-      
-      <figure id="gnome-dictionary-fig">
-        <title>Ventana de inicio Canaima-Mod-Burg</title>
-        <screenshot> 
-          <mediaobject>
-            <imageobject>
-              <imagedata fileref="figures/canaima-mod-burg-bienvenida.png" format="PNG"/>
-            </imageobject>
-            <textobject><phrase>Muestra la ventana principal del Canaima-Mod-Burg.</phrase></textobject> 
-          </mediaobject>
-        </screenshot>
-      </figure>
+
 
     </sect2>
 
@@ -150,63 +125,18 @@
     <sect2 id="Canaima-Mod-Burg-lookup">
       <title>Cambiar tema</title>
       
-      <para>Para modificar un tema, teclée sobre la ventana desplegable  <guilabel>TEMA</guilabel> y seleccione alguno de la lista.</para>
-    
-      <para>Tal cual lo indican las imagenes a continuación:</para>
-
-      <figure id="Canaima-Mod-Burg-lookup-fig1">
-        <title>Lista de temas disponibles</title>
-        <screenshot> 
-          <mediaobject>
-            <imageobject>
-              <imagedata fileref="figures/canaima-mod-burg-temas.png" format="PNG"/>
-            </imageobject>
-            <textobject><phrase>Muestra los temas disponibles.</phrase></textobject> 
-          </mediaobject>
-        </screenshot>
-      </figure>
-      
-      <para>En este caso se selecciona el tema fortune, como lo indica la figura 3, y se presiona el botón Guardar.</para>
-      <figure id="Canaima-Mod-Burg-lookup-fig2">
-        <title>Tema seleccionado </title>
-        <screenshot> 
-          <mediaobject>
-            <imageobject>
-              <imagedata fileref="figures/canaima-mod-burg-seleccion.png" format="PNG"/>
-            </imageobject>
-            <textobject><phrase>Tema seleccionado de la lista.</phrase></textobject> 
-          </mediaobject>
-        </screenshot>
-      </figure>	
-
-     <para>Luego de haber presionado el botón Guardar, mustra el tema seleccionado, tal como lo indica la figura 4.</para>
-      <figure id="Canaima-Mod-Burg-lookup-fig3">
-        <title>Visualización del tema seleccionado </title>
-        <screenshot> 
-          <mediaobject>
-            <imageobject>
-              <imagedata fileref="figures/canaima-mod-burg-visualizacion.png" format="PNG"/>
-            </imageobject>
-            <textobject><phrase> Visualización del tema seleccionado de la lista.</phrase></textobject> 
-          </mediaobject>
-        </screenshot>
-      </figure>
-
-     <para>Finalmente luego de haber cargado, cierra la ventana del tema y se muestra un mensaje indicando que el tema se ha modificado , tal como lo indica la figura 6.</para>
-      <figure id="Canaima-Mod-Burg-lookup-fig4">
-        <title>Mensaje de confirmación </title>
-        <screenshot> 
-          <mediaobject>
-            <imageobject>
-              <imagedata fileref="figures/canaima-mod-burg-confirmacion.png" format="PNG"/>
-            </imageobject>
-            <textobject><phrase> Confirmación del tema modificado.</phrase></textobject> 
-          </mediaobject>
-        </screenshot>
-      </figure>
-<para>Acepta el mensaje y listo ya tiene un nuevo tema en el burg.</para>
-	
-
+      <para>Para cambiar un tema con la aplicación solo debe seguir los siguientes pasos:</para>
+      <orderedlist>
+		
+		<listitem>
+			<para>Para modificar un tema, teclée sobre la ventana desplegable  <guilabel>Theme</guilabel> y seleccione alguno de la lista.</para>
+		</listitem>
+		
+		<listitem>
+			<para>Luego de seleccionar el tema de su preferencia, haga click en el botón <guilabel>Aceptar</guilabel>.</para>
+		</listitem>	
+	  
+	  </orderedlist>
     
     </sect2>
       
