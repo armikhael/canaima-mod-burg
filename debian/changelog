@@ -1,3 +1,9 @@
+canaima-mod-burg (1.0-13) unstable; urgency=low
+
+  * [1cff84e] corrigiendo ruta img y makefile permisos a enlace
+
+ -- Carlos Espinoza <carlosarmikhael@gmail.com>  Wed, 03 Jul 2013 10:40:27 -0430
+
 canaima-mod-burg (1.0-12) unstable; urgency=low
 
   * [d946408] corrigiendo enlace simbolico y nombre xD
