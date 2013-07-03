@@ -1,3 +1,9 @@
+canaima-mod-burg (2.0) unstable; urgency=low
+
+  * UNRELEASED
+
+ -- Carlos Espinoza <carlosarmikhael@gmail.com>  Wed, 03 Jul 2013 15:36:42 -0430
+
 canaima-mod-burg (1.0-14) unstable; urgency=low
 
   * [de4f6f3] corrigiendo ruta img y makefile permisos a enlace
