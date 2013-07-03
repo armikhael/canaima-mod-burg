@@ -49,7 +49,6 @@ install:
 	cp -r img/canaima-burg-icon.png $(DESTDIR)/usr/share/pixmaps/	
 	cp -r desktop/canaima-mod-burg.desktop $(DESTDIR)/usr/share/applications/
 	cp -r scripts  $(DESTDIR)/usr/share/canaima-mod-burg/
-	chmod +x $(DESTDIR)/usr/share/canaima-mod-burg/scripts/canaima-mod-burg.py
 	cp -r ayuda/canaima-mod-burg $(DESTDIR)/usr/share/gnome/help/
 	ln -s /usr/share/canaima-mod-burg/scripts/canaima-mod-burg.py $(DESTDIR)/usr/bin/canaima-mod-burg
 

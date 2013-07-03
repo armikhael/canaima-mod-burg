@@ -26,7 +26,7 @@ class CanaimaBurgModificar:
 	
 	#Rutas - - - - -
     WORKDIR = sys.path[0]
-    MONITOR_IMG ='../img/monitor.png'
+    MONITOR_IMG ='/usr/share/canaima-mod-burg/img/monitor.png'
     RUTA_BUG = '/boot/burg/themes/'
     RUTA_TMP = '/tmp/pre_view.png'
     AYUDA_RUTA_SISTEMA = '/usr/share/gnome/help/canaima-mod-burg/es/canaima-mod-burg.xml'
@@ -42,7 +42,7 @@ class CanaimaBurgModificar:
         self.window.set_size_request(550, 540)
         self.window.connect("delete_event", self.delete_event)
         self.window.connect("destroy", self.destroy)
-        #self.window.set_icon_from_file('/usr/share/pixmaps/canaima-burg-icon.png')
+        self.window.set_icon_from_file('/usr/share/pixmaps/canaima-burg-icon.png')
         
         #Contenedor - - - - -
         self.fixed = gtk.Fixed()
